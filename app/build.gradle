@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.ecommerceapp'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.ecommerceapp"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // Glide : For loading images from internet
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    // for rounded image View
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // Material Search Bar
+    implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
+
+    // Slider : Search on google why not carousle github android
+    // Material Components for Android. Replace the version with the latest version of Material Components library.
+    implementation 'com.google.android.material:material:1.7.0'
+    // Circle Indicator (To fix the xml preview "Missing classes" error)
+    implementation 'me.relex:circleindicator:2.1.6'
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
+
+    // Volley
+    implementation 'com.android.volley:volley:1.2.1'
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+
+    // TinyCart for calculating total price
+    implementation 'com.github.hishd:TinyCart:1.0.1'
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Add the dependency for the Realtime Database library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-database'
+
+    // Authentication
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+
+    // Splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.0'
+
+    // search on google advancedwebview -> for payment activites
+    implementation 'com.github.delight-im:Android-AdvancedWebView:v3.2.1'
+
+    // razorpay payment
+    implementation 'com.razorpay:checkout:1.6.26'
+
+
+}
